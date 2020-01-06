@@ -46,9 +46,10 @@ function App() {
         />
       </div>
 
-      <Container as="a" href="#content">
+      <Container>
         <Grid centered padded>
           <Segment inverted>
+            <a href="#content" />
             <h1>Hi!</h1>
             <p>
               My name is Ciarán. I'm a software engineer and full-stack

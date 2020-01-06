@@ -52,8 +52,8 @@ function App() {
             <a href="#content" />
             <h1>Hi!</h1>
             <p>
-              My name is Ciarán. I'm a software engineer and full-stack
-              developer based in Dublin, Ireland.
+              I'm Ciarán. I'm a software engineer and full-stack developer based
+              in Dublin, Ireland.
             </p>
             <p>
               I am currently in the final year of my BSc Computational Thinking.

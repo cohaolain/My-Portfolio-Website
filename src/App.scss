@@ -2,34 +2,96 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+// https://css-tricks.com/snippets/css/fluid-typography/
+// BEGIN
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 12px;
+$max_font: 18px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+// END
+
+body {
+  background-color: #222;
+  font-family: monospace !important;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: monospace !important;
+  }
+  color: #fff;
 }
 
 .header-container {
   min-height: 100vh;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   .typewriter {
-    /* font-size: calc(100vw / 50); */
     display: inline-flex;
-    color: #fff;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-
-    white-space: nowrap; /* Keeps the content on a single line */
-    padding: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0.15em; /* Adjust as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 auto;
+    letter-spacing: 0.15em;
     max-width: fit-content;
+    border-right: 0.15em solid #0000;
     &.primary {
-      animation: blink-caret 0.1s linear 1.8s;
+      animation: blink-caret 0.5s linear 2;
     }
     &.secondary {
-      border-right: 0.15em solid #fff; /* The typwriter cursor */
       color: #eee;
       animation: blink-caret 0.75s linear infinite;
     }
+  }
+  i {
+    opacity: 0;
+    animation: fadein 1s forwards 2s, tada 2s linear infinite;
+    /* &:hover {
+      opacity: 1;
+      animation: tada 2s linear infinite;
+    } */
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -56,7 +118,91 @@
   }
 }
 
-body {
-  background-color: #222;
-  font-family: monospace;
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.footer {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }

@@ -55,7 +55,7 @@ function App() {
               developer based in Dublin, Ireland.
             </p>
             <p>
-              I am currently in the final year of my BSc Computation Thinking.
+              I am currently in the final year of my BSc Computational Thinking.
             </p>
             <p>
               I build high-quality applications with a focus on scalability and

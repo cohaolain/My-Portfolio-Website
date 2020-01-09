@@ -1,6 +1,6 @@
 # Ciarán Ó hAoláin - Website
 
-You can view the site at [ciaran.mucss.ie](https://ciaran.mucss.ie).
+You can view the site at [cohaolain.ie](https://cohaolain.ie).
 
 ## Available Scripts
 

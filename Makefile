@@ -7,3 +7,7 @@ push-mucss:
 	rsync -r build/ mucss:ciaran.mucss.ie --delete
 
 deploy-mucss: build-prod push-mucss
+
+deploy:
+	./deploy_gh.sh
+

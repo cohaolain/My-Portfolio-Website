@@ -7,6 +7,18 @@ The format is based on
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2020-07-20
+
+### Added
+
+-   GitHub Pages deployment script.
+-   Some assets, like 404 page and CNAME for GitHub Pages.
+
+### Changed
+
+-   Updated website contents with current information.
+
+
 ## [1.0.0] - 2020-01-09
 
 ### Added

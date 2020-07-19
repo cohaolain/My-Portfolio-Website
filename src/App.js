@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Grid, Header, Icon, Segment } from "semantic-ui-react";
+import { Container, Grid, Icon, Segment } from "semantic-ui-react";
 
 import "./App.scss";
 
@@ -40,7 +40,7 @@ function App() {
           name="arrow alternate circle down outline"
           onClick={() =>
             document
-              .querySelector("a[href='#content']")
+              .getElementById("content")
               .scrollIntoView({ behavior: "smooth" })
           }
         />
@@ -49,34 +49,42 @@ function App() {
       <Container>
         <Grid centered padded>
           <Segment inverted>
-            <a href="#content" />
-            <h1>Hi!</h1>
-            <p>
-              I'm Ciarán. I'm a software engineer and full-stack developer based
-              in Dublin, Ireland.
-            </p>
-            <p>
-              I am currently in the final year of my BSc Computational Thinking.
-            </p>
-            <p>
-              I build high-quality applications with a focus on scalability and
-              reliability.
-            </p>
-            <p>
-              I am experienced in designing and innovating highly-available web
-              applications, specialist utility applications and much more.
-            </p>
-            <p>I love travelling!</p>
-            <p>
-              <a href="mailto:ciaran@cohaolain.ie">Email me</a> if you'd like to
-              get in touch, or message me over on{" "}
-              <a href="https://www.linkedin.com/in/cohaolain/">LinkedIn</a>.
-            </p>
-            <p>
-              You can also check out my{" "}
-              <a href="https://github.com/cohaolain">GitHub</a> to see a small
-              sample of some projects I've worked on in the past.
-            </p>
+            <div id="content">
+              <h1>Hi!</h1>
+              <p>
+                I'm Ciarán. I'm a software engineer and full-stack developer
+                based in Dublin, Ireland.
+              </p>
+              <p>
+                I am a Technology Associate (Software Engineer) at Susquehanna
+                International Group LLC. (SIG), a global quantitative trading
+                firm.
+              </p>
+              <p>
+                I hold a BSc (Hons) Computational Thinking from Maynooth
+                University. I graduated in 2020 with a First Class Honours
+                degree.
+              </p>
+              <p>
+                I build high-quality applications with a focus on scalability
+                and reliability.
+              </p>
+              <p>
+                I am experienced in designing and innovating highly-available
+                web applications, specialist utility applications and much more.
+              </p>
+              <p>I love travelling!</p>
+              <p>
+                <a href="mailto:ciaran@cohaolain.ie">Email me</a> if you'd like
+                to get in touch, or message me over on{" "}
+                <a href="https://www.linkedin.com/in/cohaolain/">LinkedIn</a>.
+              </p>
+              <p>
+                You can also check out my{" "}
+                <a href="https://github.com/cohaolain">GitHub</a> to see a small
+                sample of some projects I've worked on in the past.
+              </p>
+            </div>
           </Segment>
         </Grid>
       </Container>

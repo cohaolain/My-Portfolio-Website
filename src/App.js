@@ -3,7 +3,7 @@ import { Container, Grid, Icon, Segment } from "semantic-ui-react";
 
 import "./App.scss";
 
-import Background from "./components/Background.js";
+import { Background } from "./components/Background.js";
 
 function App() {
   const c1 = "Ciarán Ó hAoláin.";

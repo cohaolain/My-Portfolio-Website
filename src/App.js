@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Grid, Icon, Segment } from "semantic-ui-react";
+import { Container, Divider, Grid, Icon, Segment } from "semantic-ui-react";
 
 import "./App.scss";
 
@@ -51,29 +51,30 @@ function App() {
           <Segment inverted>
             <div id="content">
               <h1>Hi!</h1>
+              <p>I'm Ciarán.</p>
               <p>
-                I'm Ciarán. I'm a software engineer and full-stack developer
-                based in Dublin, Ireland.
+                I'm a software engineer and full-stack developer based in
+                Dublin, Ireland.
               </p>
               <p>
-                I am a Technology Associate (Software Engineer) at Susquehanna
-                International Group LLC. (SIG), a global quantitative trading
-                firm.
+                I build highly performant applications with a focus on
+                scalability and reliability.
+              </p>
+              <Divider />
+              <p>
+                I'm currently a Software Engineer at Susquehanna International
+                Group LLC. (SIG),
+                <br />a global quantitative trading firm.
               </p>
               <p>
                 I hold a BSc (Hons) Computational Thinking from Maynooth
-                University. I graduated in 2020 with a First Class Honours
-                degree.
+                University,
+                <br />
+                having graduated in 2020 with a First Class Honours degree.
               </p>
-              <p>
-                I build high-quality applications with a focus on scalability
-                and reliability.
-              </p>
-              <p>
-                I am experienced in designing and innovating highly-available
-                web applications, specialist utility applications and much more.
-              </p>
+              <Divider />
               <p>I love travelling!</p>
+              <Divider />
               <p>
                 <a href="mailto:ciaran@cohaolain.ie">Email me</a> if you'd like
                 to get in touch, or message me over on{" "}
@@ -82,7 +83,7 @@ function App() {
               <p>
                 You can also check out my{" "}
                 <a href="https://github.com/cohaolain">GitHub</a> to see a small
-                sample of some projects I've worked on in the past.
+                sample of some projects I've worked on.
               </p>
             </div>
           </Segment>

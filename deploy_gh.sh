@@ -1,14 +1,19 @@
 #!/bin/bash
-
+echo "Clearing gh directory"
 rm -rf gh && mkdir gh && cd gh
-pwd
-git clone git@github.com:cohaolain/Website.git .
-pwd
-git status
+
+echo "Init empty sites repo"
+git init
+git remote add origin git@github.com:cohaolain/cohaolain.git
+
+echo "Build site"
 yarn build
+
+echo "Copy prod site and GitHub profile README"
 cp ../build/* . -r
-pwd
-git status
+cp ../README_profile.md README.md
+
+echo "Generating commit and force pushing"
 git add .
 git commit -m "Update site build"
-git push
+git push --set-upstream origin main --force
